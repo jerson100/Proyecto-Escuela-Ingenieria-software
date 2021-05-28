@@ -1,11 +1,16 @@
 import React from "react";
-import Login from "../../../views/Login/Login";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+// import Login from "../../../views/Login/Login";
+import NavigationMenu from "../../../components/layout/NavigationMenu/NavigationMenu";
 
 const AppRouter = () => {
   return (
-    <div>
-      <Login />
-    </div>
+    <Router>
+      <NavigationMenu />
+      {/* <Switch>
+        <Login />
+      </Switch> */}
+    </Router>
   );
 };
 
