@@ -1,12 +1,14 @@
 import React from "react";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 // import Login from "../../../views/Login/Login";
 import NavigationMenu from "../../../components/layout/NavigationMenu/NavigationMenu";
+import PublicRouter from "../PublicRouter/PublicRouter";
 
 const AppRouter = () => {
   return (
     <Router>
-      <NavigationMenu />
+      {/* <NavigationMenu /> */}
+      <PublicRouter />
       {/* <Switch>
         <Login />
       </Switch> */}

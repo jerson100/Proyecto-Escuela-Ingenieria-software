@@ -2,7 +2,7 @@ import { ListItem } from "@material-ui/core";
 import React from "react";
 import { SocialStyle } from "../socialStyle";
 import { SocialFb, SocialTW, SocialIns, SocialList } from "../socialStyle.js";
-import schoolConst from "../../../../../../const/school";
+import schoolConst from "../../../../../../../const/school";
 
 const SocialNetwork = () => {
   return (
