@@ -4,12 +4,13 @@ import NotFound from "../../../views/public/NotFound/NotFound";
 import MapAllowedRoutes from "../MapAllowedRoutes/MapAllowedRoutes";
 
 const PublicRouter = () => {
-  console.log("publci");
+  console.log("public");
   return (
     <>
       <MapAllowedRoutes
         routes={HOMEPAGE_ROUTES}
         basePath="/"
+        isAddNotFound
         NotFoundComponent={NotFound}
       />
     </>

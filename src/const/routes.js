@@ -18,18 +18,20 @@ import Login from "../views/public/Login/Login";
 */
 export const DASHBOARD_ROUTES = {
   layout: DashboardLayout,
-  routes: new Route(
-    "/",
-    [
-      //   new Route("/", [], Home, "Inicio", [roles.TEACHER], true),
-      //   new Route("/", [], Home, true, "Inicio", null),
-    ],
-    Home,
-    "Inicio",
-    [],
-    //   [roles.ADMIN, roles.STUDENT, roles.STUDENT],
-    true
-  ),
+  routes: [
+    new Route(
+      "/",
+      [
+        //   new Route("/", [], Home, "Inicio", [roles.TEACHER], true),
+        //   new Route("/", [], Home, true, "Inicio", null),
+      ],
+      Home,
+      "Inicio",
+      [],
+      //   [roles.ADMIN, roles.STUDENT, roles.STUDENT],
+      true
+    ),
+  ],
 };
 
 export const HOMEPAGE_ROUTES = [new Route("/login", [], Login, [], "", true)];

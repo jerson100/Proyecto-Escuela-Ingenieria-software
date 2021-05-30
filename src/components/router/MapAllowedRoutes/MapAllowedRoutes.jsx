@@ -1,8 +1,20 @@
 import React from "react";
 import { Route, Switch, useRouteMatch } from "react-router";
 
-const MapAllowedRoutes = ({ routes, basePath, NotFoundComponent }) => {
+const MapAllowedRoutes = ({
+  routes,
+  basePath,
+  NotFoundComponent,
+  isAddNotFound,
+}) => {
   const match = useRouteMatch(basePath);
+  if (!match) {
+    return (
+      <Route>
+        <NotFoundComponent />
+      </Route>
+    );
+  }
   return (
     <Switch>
       {routes.map((route) => {
@@ -18,13 +30,15 @@ const MapAllowedRoutes = ({ routes, basePath, NotFoundComponent }) => {
           <Route
             {...rest}
             key={path}
-            path={`${match.path.localeCompare("/") == 0 ? "" : "/"}${path}`}
+            path={`${
+              match.path.localeCompare("/") == 0 ? "" : match.path
+            }${path}`}
           >
-            <Component children={children} />;
+            <Component children={children} />
           </Route>
         );
       })}
-      {NotFoundComponent && (
+      {isAddNotFound && NotFoundComponent && (
         <Route>
           <NotFoundComponent />
         </Route>
