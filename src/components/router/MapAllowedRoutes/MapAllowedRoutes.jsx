@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Route, Switch, useRouteMatch } from "react-router";
 
 const MapAllowedRoutes = ({
@@ -47,4 +47,4 @@ const MapAllowedRoutes = ({
   );
 };
 
-export default MapAllowedRoutes;
+export default memo(MapAllowedRoutes);

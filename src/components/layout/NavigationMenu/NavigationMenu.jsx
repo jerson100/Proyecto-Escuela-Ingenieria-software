@@ -16,8 +16,11 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+
+import { DASHBOARD_ROUTES } from "../../../const/routes";
+import { Link as LinkRouter, useRouteMatch } from "react-router-dom";
+import { Link as MaterialIULink } from "@material-ui/core";
 
 const drawerWidth = 240;
 
@@ -136,28 +139,43 @@ const NavigationMenu = ({ setOpen, open }) => {
           </IconButton>
         </div>
         <Divider />
-        <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
+        <NavList />
       </Drawer>
+    </>
+  );
+};
+
+const NavList = () => {
+  const { routes } = DASHBOARD_ROUTES;
+  const match = useRouteMatch();
+  return (
+    <>
+      <List>
+        {routes.map((r) => (
+          <ListItem button key={r.title}>
+            {r.Icon && <ListItemIcon>{<r.Icon />}</ListItemIcon>}
+            <ListItemText>
+              <MaterialIULink
+                component={LinkRouter}
+                to={`${match.path}${r.path}`}
+                color="textPrimary"
+                underline={"none"}
+              >
+                {r.title}
+              </MaterialIULink>
+            </ListItemText>
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        <ListItem button key="Logout">
+          <ListItemIcon>
+            <ExitToAppIcon />
+          </ListItemIcon>
+          <ListItemText primary="Logout" />
+        </ListItem>
+      </List>
     </>
   );
 };

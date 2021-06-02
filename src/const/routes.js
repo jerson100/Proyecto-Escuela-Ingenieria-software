@@ -1,6 +1,7 @@
 import DashboardLayout from "../components/layout/DashboardLayout/DashboardLayout";
 import Route from "../models/route";
 import Home from "../views/private/common/Home/Home";
+import HomeIcon from "@material-ui/icons/Home";
 import Login from "../views/public/Login/Login";
 
 /*
@@ -26,10 +27,11 @@ export const DASHBOARD_ROUTES = {
         //   new Route("/", [], Home, true, "Inicio", null),
       ],
       Home,
-      "Inicio",
       [],
+      "Inicio",
       //   [roles.ADMIN, roles.STUDENT, roles.STUDENT],
-      true
+      true,
+      HomeIcon
     ),
   ],
 };
