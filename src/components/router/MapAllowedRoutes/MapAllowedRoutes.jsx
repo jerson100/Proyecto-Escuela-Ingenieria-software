@@ -31,7 +31,7 @@ const MapAllowedRoutes = ({
             {...rest}
             key={path}
             path={`${
-              match.path.localeCompare("/") == 0 ? "" : match.path
+              match.path.localeCompare("/") === 0 ? "" : match.path
             }${path}`}
           >
             <Component children={children} />

@@ -1,4 +1,4 @@
-export default {
+const schoolConfig = {
   name: "Nombre de la escuela",
   socialBar: {
     fb: "",
@@ -6,3 +6,5 @@ export default {
     ins: "",
   },
 };
+
+export default schoolConfig;

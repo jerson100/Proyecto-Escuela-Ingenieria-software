@@ -1,4 +1,4 @@
-export default {
+const colors = {
   bgPrimary: {
     dark: "#202225",
     light: "#ffff",
@@ -17,16 +17,6 @@ export default {
     dark: "#36393fd4",
     contrastText: "#36393fd4",
   },
-  //   light: {
-  //     primary: "#2f3136",
-  //     white: "#ffff",
-  //     second: "#ffff",
-  //     primaryLight: "#3f4147",
-  //     secondLight: "#ffffff36",
-  //   },
-  //   black: {
-  //     primary: "#202225",
-  //     second: "#ffff",
-  //     secondLight: "#3f4147",
-  //   },
 };
+
+export default colors;

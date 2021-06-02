@@ -5,7 +5,6 @@ export const isArrayWithLength = (arr) => {
 };
 
 export const getAllowedRoutes = (routes) => {
-  console.log(routes);
   const roles = JSON.parse(localStorage.getItem("roles"));
   return routes.filter(({ permission }) => {
     if (!permission) return true;
