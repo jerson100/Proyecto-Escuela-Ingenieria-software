@@ -5,7 +5,7 @@ import TeacherHomeDashBoard from "../../teacher/TeacherHomeDashBoard/TeacherHome
 
 const Home = () => {
   //dependiendo el tipo que accede al sistema mostramos un componente Home distinto.
-  const type_user = 1;
+  const type_user = 2;
 
   switch (type_user) {
     case 1:
