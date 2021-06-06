@@ -1,5 +1,14 @@
 export default class Route {
-  constructor(path, children, component, permission, title, exact, icon) {
+  constructor(
+    path,
+    children,
+    component,
+    permission,
+    title,
+    exact,
+    icon,
+    isVisible = true
+  ) {
     this.path = path || "";
     this.children = children || [];
     if (!component) {
@@ -10,5 +19,6 @@ export default class Route {
     this.title = title || "Title";
     this.Icon = icon || null;
     this.permission = permission || [];
+    this.isVisible = isVisible;
   }
 }

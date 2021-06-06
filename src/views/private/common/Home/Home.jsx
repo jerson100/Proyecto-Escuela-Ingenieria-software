@@ -3,10 +3,9 @@ import AdminHomeDashBoard from "../../administrator/AdminHomeDashBoard/AdminHome
 import StudentHomeDashBoard from "../../student/StudentHomeDashBoard/StudentHomeDashBoard";
 import TeacherHomeDashBoard from "../../teacher/TeacherHomeDashBoard/TeacherHomeDashBoard";
 
-const Home = () => {
+const Home = (props) => {
   //dependiendo el tipo que accede al sistema mostramos un componente Home distinto.
   const type_user = 2;
-
   switch (type_user) {
     case 1:
       return <AdminHomeDashBoard />;

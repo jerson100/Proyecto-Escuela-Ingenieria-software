@@ -67,21 +67,24 @@ const NavList = React.memo(() => {
   return (
     <>
       <List>
-        {routes.map((r) => (
-          <ListItem button key={r.title}>
-            {r.Icon && <ListItemIcon>{<r.Icon />}</ListItemIcon>}
-            <ListItemText>
-              <MaterialIULink
-                component={LinkRouter}
-                to={`${match.path}${r.path}`}
-                color="textPrimary"
-                underline={"none"}
-              >
-                {r.title}
-              </MaterialIULink>
-            </ListItemText>
-          </ListItem>
-        ))}
+        {routes.map(
+          (r) =>
+            r.isVisible && (
+              <ListItem button key={r.title}>
+                {r.Icon && <ListItemIcon>{<r.Icon />}</ListItemIcon>}
+                <ListItemText>
+                  <MaterialIULink
+                    component={LinkRouter}
+                    to={`${match.path}${r.path}`}
+                    color="textPrimary"
+                    underline={"none"}
+                  >
+                    {r.title}
+                  </MaterialIULink>
+                </ListItemText>
+              </ListItem>
+            )
+        )}
       </List>
       <Divider />
     </>

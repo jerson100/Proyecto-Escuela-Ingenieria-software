@@ -8,6 +8,7 @@ const MapAllowedRoutes = ({
   isAddNotFound,
 }) => {
   const match = useRouteMatch(basePath);
+
   if (!match) {
     return (
       <Route>
@@ -26,6 +27,7 @@ const MapAllowedRoutes = ({
           permission,
           ...rest
         } = route;
+
         return (
           <Route
             {...rest}

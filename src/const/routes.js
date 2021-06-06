@@ -3,6 +3,7 @@ import Route from "../models/route";
 import Home from "../views/private/common/Home/Home";
 import HomeIcon from "@material-ui/icons/Home";
 import Login from "../views/public/Login/Login";
+import CourseView from "../views/private/common/CourseView/CourseView";
 
 /*
         RBAC V1
@@ -23,7 +24,14 @@ export const DASHBOARD_ROUTES = {
     new Route(
       "/",
       [
-        //   new Route("/", [], Home, "Inicio", [roles.TEACHER], true),
+        // new Route(
+        //   "/course",
+        //   [new Route("/15", [], Home, true, "15", null)],
+        //   Home,
+        //   "Course",
+        //   [],
+        //   true
+        // ),
         //   new Route("/", [], Home, true, "Inicio", null),
       ],
       Home,
@@ -32,6 +40,17 @@ export const DASHBOARD_ROUTES = {
       //   [roles.ADMIN, roles.STUDENT, roles.STUDENT],
       true,
       HomeIcon
+    ),
+    new Route(
+      "/course/:id",
+      [],
+      CourseView,
+      [],
+      "Curso",
+      //   [roles.ADMIN, roles.STUDENT, roles.STUDENT],
+      true,
+      HomeIcon,
+      false
     ),
   ],
 };
