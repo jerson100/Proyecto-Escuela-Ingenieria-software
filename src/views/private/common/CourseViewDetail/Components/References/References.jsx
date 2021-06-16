@@ -1,7 +1,7 @@
 import React from "react";
 import Row from "../../../../../../components/common/Row/Row";
 import List from "@material-ui/core/List";
-import ItemLink from "../ItemLink/ItemLink";
+import ItemLink from "../../../../../../components/common/ItemLink/ItemLink";
 
 const data = [
   {
