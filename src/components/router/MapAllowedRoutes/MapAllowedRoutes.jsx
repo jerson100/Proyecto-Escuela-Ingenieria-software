@@ -3,12 +3,11 @@ import { Route, Switch, useRouteMatch } from "react-router";
 
 const MapAllowedRoutes = ({
   routes,
-  basePath,
+  basePath = "",
   NotFoundComponent,
   isAddNotFound,
 }) => {
   const match = useRouteMatch(basePath);
-
   if (!match) {
     return (
       <Route>

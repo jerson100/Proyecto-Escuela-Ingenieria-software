@@ -91,4 +91,4 @@ const NavList = React.memo(() => {
   );
 });
 
-export default JeNav;
+export default React.memo(JeNav);

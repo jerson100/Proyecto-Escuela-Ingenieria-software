@@ -17,6 +17,11 @@ const colors = {
     dark: "#36393fd4",
     contrastText: "#36393fd4",
   },
+  bgBody: {
+    light: "#ffff",
+    main: "#303030",
+    dark: "#303030",
+  },
 };
 
 export default colors;

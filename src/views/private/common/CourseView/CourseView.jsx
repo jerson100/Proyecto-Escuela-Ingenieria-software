@@ -1,14 +1,12 @@
 import { Container, Typography } from "@material-ui/core";
-import Grid from "@material-ui/core/Grid";
 import React from "react";
 import { useParams } from "react-router";
 import RouterBreadcrumbs from "../../../../components/common/RouterBreadcrumbs/RouterBreadcrumbs";
 import Banner from "./components/Banner/Banner";
-import Description from "./components/Description/Description";
-import TeacherList from "./components/TeacherList/TeacherList";
-import Trabajo from "./components/Trabajo/Trabajo";
+import MapAllowedRoutes from "../../../../components/router/MapAllowedRoutes/MapAllowedRoutes";
+import CourseViewContent from "./components/CourseViewContent/CourseViewContent";
 
-const CourseView = () => {
+const CourseView = ({ children }) => {
   const { id } = useParams();
   return (
     <>
@@ -20,19 +18,10 @@ const CourseView = () => {
       <Container>
         <RouterBreadcrumbs />
       </Container>
-      <Container>
-        <Grid container spacing={2}>
-          <Grid item xs={12} md={8}>
-            <Description />
-            <Trabajo />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <TeacherList />
-          </Grid>
-        </Grid>
-      </Container>
+      <CourseViewContent />
+      <MapAllowedRoutes routes={children} />
     </>
   );
 };
 
-export default CourseView;
+export default React.memo(CourseView);

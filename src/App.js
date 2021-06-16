@@ -27,6 +27,7 @@ const theme = createMuiTheme({
     bgPrimary: colors.bgPrimary,
     bgSecondary: colors.bgSecondary,
     bgThrid: colors.bgThrid,
+    bgBody: colors.bgBody,
     // accent: {
     //   backgroundColor: purple[500],
     //   color: "#ffff",

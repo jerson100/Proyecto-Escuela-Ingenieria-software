@@ -1,8 +1,20 @@
 import React from "react";
-import { RowContainerStyle, RowTitleStyle, RowContentStyle } from "./row.style";
+import PropTypes from "prop-types";
+import {
+  RowContainerStyle,
+  RowTitleStyle,
+  RowContentStyle,
+  RowPaperStyle,
+} from "./row.style";
 
-const Row = ({ children }) => {
-  return <RowContainerStyle>{children}</RowContainerStyle>;
+const Row = ({ children, isMargin, isPaper }) => {
+  if (isPaper)
+    return (
+      <RowPaperStyle variant="outlined">
+        <RowContainerStyle isMargin={isMargin}>{children}</RowContainerStyle>
+      </RowPaperStyle>
+    );
+  return <RowContainerStyle isMargin={isMargin}>{children}</RowContainerStyle>;
 };
 
 const RowTitle = ({ children, component, variant }) => {
@@ -17,8 +29,34 @@ const RowContent = ({ children }) => {
   return <RowContentStyle>{children}</RowContentStyle>;
 };
 
+Row.propTypes = {
+  isMargin: PropTypes.bool,
+  isPaper: PropTypes.bool,
+};
+
+Row.defaultProps = {
+  isMargin: true,
+  isPaper: false,
+};
+
+RowTitle.propTypes = {
+  variant: PropTypes.oneOf([
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "body1",
+    "body2",
+    "subtitle1",
+    "subtitle2",
+  ]),
+  component: PropTypes.string,
+};
+
 RowTitle.defaultProps = {
-  variant: "h4",
+  variant: "h5",
   component: "h1",
 };
 
