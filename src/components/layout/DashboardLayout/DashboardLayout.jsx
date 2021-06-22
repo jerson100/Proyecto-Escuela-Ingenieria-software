@@ -1,6 +1,7 @@
 import { makeStyles } from "@material-ui/core";
 import React from "react";
 import NavigationMenu from "./components/NavigationMenu/NavigationMenu";
+import SpeedDialDashboard from "./components/SpeedDial/SpeedDialDashboard";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,6 +31,7 @@ const DashboardLayout = ({ children }) => {
           <div className={classes.wrapper}>{children}</div>
         </main>
       </div>
+      <SpeedDialDashboard />
     </>
   );
 };

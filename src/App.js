@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import AppRouter from "./components/router/AppRouter/AppRouter";
 
 import { ThemeProvider } from "styled-components";
@@ -15,28 +15,30 @@ import {
 
 import colors from "./const/colors";
 import { CssBaseline } from "@material-ui/core";
+import { ThemeContext } from "./contexts/ThemeContextProvider";
 // import { purple } from "@material-ui/core/colors";
 
 // import { unstable_createMuiStrictModeTheme as createMuiTheme } from '@material-ui/core';
 
 // import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
-const theme = createMuiTheme({
-  palette: {
-    type: "dark",
-    bgPrimary: colors.bgPrimary,
-    bgSecondary: colors.bgSecondary,
-    bgThrid: colors.bgThrid,
-    bgBody: colors.bgBody,
-    // accent: {
-    //   backgroundColor: purple[500],
-    //   color: "#ffff",
-    // },
-  },
-});
-
 function App() {
   //   const color = { color: colors.light };
+  const { theme: themeContext } = useContext(ThemeContext);
+  //   console.log(themeContext);
+  const theme = createMuiTheme({
+    palette: {
+      type: themeContext || "light",
+      bgPrimary: colors.bgPrimary,
+      bgSecondary: colors.bgSecondary,
+      bgThrid: colors.bgThrid,
+      bgBody: colors.bgBody,
+      // accent: {
+      //   backgroundColor: purple[500],
+      //   color: "#ffff",
+      // },
+    },
+  });
 
   return (
     <StylesProvider injectFirst>
